@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.IO;
 
 namespace QUANLYNHAHANG
 {
@@ -91,6 +92,26 @@ namespace QUANLYNHAHANG
                 MessageBox.Show("Chọn danh mục!");
                 return false;
             }
+            // Giá nhập
+            if (!decimal.TryParse(txtGiaNhap.Text, out decimal giaNhap) || giaNhap < 0)
+            {
+                MessageBox.Show("Giá nhập không hợp lệ!");
+                return false;
+            }
+
+            // Số lượng bán
+            if (!int.TryParse(txtSLBan.Text, out int slBan) || slBan < 0)
+            {
+                MessageBox.Show("Số lượng bán không hợp lệ!");
+                return false;
+            }
+
+            // Số lượng nhập
+            if (!int.TryParse(txtSLNhap.Text, out int slNhap) || slNhap < 0)
+            {
+                MessageBox.Show("Số lượng nhập không hợp lệ!");
+                return false;
+            }
 
             return true;
         }
@@ -142,7 +163,9 @@ namespace QUANLYNHAHANG
             txtDonViTinh.Text = "Phần";
             txtHinhAnh.Text = "";
             picPreview.Image = null;
-
+            txtGiaNhap.Clear();
+            txtSLBan.Clear();
+            txtSLNhap.Clear();
             cboTrangThai.SelectedIndex = 1;
             cboDanhMuc.Text= null;
             txtMaMon.ReadOnly = false;
@@ -206,17 +229,20 @@ namespace QUANLYNHAHANG
             string hinh = txtHinhAnh.Text.Trim();
             string maDM = cboDanhMuc.SelectedValue.ToString();
             int trangThai = cboTrangThai.SelectedIndex;
+            decimal giaNhap = decimal.Parse(txtGiaNhap.Text);
+            int slBan = int.Parse(txtSLBan.Text);
+            int slNhap = int.Parse(txtSLNhap.Text);
 
             int result = 0;
 
             switch (currentState)
             {
                 case FormState.Adding:
-                    result = bll.ThemMonAn(ma, ten, gia, dvt, hinh, maDM, trangThai);
+                    result = bll.ThemMonAn(ma, ten, gia, giaNhap, slBan, slNhap, dvt, hinh, maDM, trangThai);
                     break;
 
                 case FormState.Editing:
-                    result = bll.SuaMonAn(ma, ten, gia, dvt, hinh, maDM, trangThai);
+                    result = bll.SuaMonAn(ma, ten, gia, giaNhap, slBan, slNhap, dvt, hinh, maDM, trangThai);
                     break;
 
                 case FormState.Deleting:
@@ -246,13 +272,30 @@ namespace QUANLYNHAHANG
             txtGiaBan.Text = row.Cells["GiaBan"].Value?.ToString();
             txtDonViTinh.Text = row.Cells["DonViTinh"].Value?.ToString();
             txtHinhAnh.Text = row.Cells["HinhAnh"].Value?.ToString();
-
+            txtGiaNhap.Text = row.Cells["GiaNhap"].Value?.ToString();
+            txtSLBan.Text = row.Cells["SoLuongBanTrongNgay"].Value?.ToString();
+            txtSLNhap.Text = row.Cells["SoLuongNhapTrongNgay"].Value?.ToString();
             cboDanhMuc.SelectedValue = row.Cells["MaDanhMuc"].Value;
 
             int tt = Convert.ToInt32(row.Cells["TrangThai"].Value);
             cboTrangThai.SelectedIndex = tt;
 
             txtMaMon.ReadOnly = true;
+
+            // 🔥 FIX ẢNH
+            string path = row.Cells["HinhAnh"].Value?.ToString();
+
+            if (!string.IsNullOrEmpty(path) && File.Exists(path))
+            {
+                using (var img = Image.FromFile(path))
+                {
+                    picPreview.Image = new Bitmap(img);
+                }
+            }
+            else
+            {
+                picPreview.Image = null;
+            }
         }
 
         private void btnChonAnh_Click(object sender, EventArgs e)
@@ -273,7 +316,10 @@ namespace QUANLYNHAHANG
             {
                 if (System.IO.File.Exists(txtHinhAnh.Text))
                 {
-                    picPreview.Image = Image.FromFile(txtHinhAnh.Text);
+                    using (var img = Image.FromFile(txtHinhAnh.Text))
+                    {
+                        picPreview.Image = new Bitmap(img);
+                    }
                 }
                 else
                 {
@@ -343,7 +389,7 @@ namespace QUANLYNHAHANG
                 Excel.Workbook wb = app.Workbooks.Open(filePath);
                 Excel.Worksheet ws = wb.Sheets[1];
 
-                SqlConnection conn = new SqlConnection(@"Data source=.\MSSQLSERVER1;Initial Catalog=QLNH;Integrated Security=True");
+                SqlConnection conn = new SqlConnection(@"Data source=.;Initial Catalog=QLNHT;Integrated Security=True");
 
                 try
                 {
@@ -455,6 +501,28 @@ namespace QUANLYNHAHANG
             {
                 this.Close();
             }
+        }
+        string TaoMaMon(string maDM)
+        {
+            int so = bll.DemSoMonTheoDanhMuc(maDM) + 1;
+
+            // Bỏ "DM" ở đầu → lấy phần sau
+            string maRutGon = maDM.Substring(2);
+
+            return "M" + maRutGon + so.ToString("D1");
+        }
+
+        private void cboDanhMuc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (currentState == FormState.Adding && cboDanhMuc.SelectedValue != null)
+            {
+                txtMaMon.Text = TaoMaMon(cboDanhMuc.SelectedValue.ToString());
+            }
+        }
+
+        private void dgvMonAn_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

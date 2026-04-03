@@ -13,7 +13,7 @@ namespace QUANLYNHAHANG
 {
     public partial class MainForManager : Form
     {
-        string strConn = @"Server=.\MSSQLSERVER1;Database=QLNH;Trusted_Connection=True";
+        string strConn = @"Server=.;Database=QLNHT;Trusted_Connection=True";
         public MainForManager()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace QUANLYNHAHANG
         }
         private void LoadHoaDon()
         {
-            string connectionString = @"Server=.\MSSQLSERVER1;Database=QLNH;Trusted_Connection=True";
+            string connectionString = @"Server=.;Database=QLNHT;Trusted_Connection=True";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
@@ -76,7 +76,7 @@ namespace QUANLYNHAHANG
         }
         private void XuatBaoCaoDoanhThu()
         {
-            string connectionString = @"Server=.\MSSQLSERVER1;Database=QLNH;Trusted_Connection=True";
+            string connectionString = @"Server=.;Database=QLNHT;Trusted_Connection=True";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try

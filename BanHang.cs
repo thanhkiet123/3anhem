@@ -12,7 +12,7 @@ namespace QUANLYNHAHANG
         public BanHang()
         {
             con = new SqlConnection(
-                @"Data source=.\MSSQLSERVER1;Initial Catalog=QLNH;Integrated Security=True");
+                @"Data source=.;Initial Catalog=QLNHT;Integrated Security=True");
 
             if (con.State == ConnectionState.Closed)
                 con.Open();
@@ -51,6 +51,18 @@ namespace QUANLYNHAHANG
                     cmd.Parameters.Add(new SqlParameter(p.ParameterName, p.Value)); // FIX reuse
 
                 return cmd.ExecuteNonQuery();
+            }
+        }
+        public object ExecuteScalar(string sql, SqlParameter[] pars)
+        {
+            using (SqlCommand cmd = new SqlCommand(sql, con))
+            {
+                cmd.CommandType = CommandType.Text;
+
+                if (pars != null)
+                    cmd.Parameters.AddRange(pars);
+
+                return cmd.ExecuteScalar();
             }
         }
     }

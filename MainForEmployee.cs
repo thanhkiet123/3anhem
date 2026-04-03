@@ -17,7 +17,7 @@ namespace QUANLYNHAHANG
         {
             InitializeComponent();
         }
-        string strConn = @"Server=.\MSSQLSERVER1;Database=QLNH;Trusted_Connection=True";
+        string strConn = @"Server=.;Database=QLNHT;Trusted_Connection=True";
         private void MainForEmployee_Load(object sender, EventArgs e)
         {
             LoadHoaDon();
@@ -26,7 +26,7 @@ namespace QUANLYNHAHANG
         }
         private void LoadHoaDon()
         {
-            string connectionString = @"Server=.\MSSQLSERVER1;Database=QLNH;Trusted_Connection=True";
+            string connectionString = @"Server=.;Database=QLNHT;Trusted_Connection=True";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try

@@ -77,7 +77,7 @@ namespace QUANLYNHAHANG
 
         public DataTable TimBan(string keyword)
         {
-            using (SqlConnection conn = new SqlConnection(@"Data Source=.\MSSQLSERVER1;Initial Catalog=QLNH;Integrated Security=True"))
+            using (SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=QLNHT;Integrated Security=True"))
             {
                 SqlCommand cmd = new SqlCommand("sp_TimBan_All", conn);
                 cmd.CommandType = CommandType.StoredProcedure;

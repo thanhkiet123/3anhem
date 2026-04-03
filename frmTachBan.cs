@@ -20,7 +20,7 @@ namespace QUANLYNHAHANG
             maBanMoi = banMoi;
         }
 
-        string connectionString = @"Data source=.\MSSQLSERVER1;Initial Catalog=QLNH;Integrated Security=True";
+        string connectionString = @"Data source=.;Initial Catalog=QLNHT;Integrated Security=True";
 
         string maBanCu;
         string maBanMoi;

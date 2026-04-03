@@ -13,7 +13,7 @@ namespace QUANLYNHAHANG
 {
     public partial class frmThanhToan : Form
     {
-        string connectionString = @"Data source=.\MSSQLSERVER1;Initial Catalog=QLNH;Integrated Security=True";
+        string connectionString = @"Data source=.;Initial Catalog=QLNHT;Integrated Security=True";
         string maKhachHang = "";
         string maHoaDon;
         int diemDaDung = 0;

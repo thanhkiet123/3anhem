@@ -44,18 +44,23 @@ namespace QUANLYNHAHANG
         /// <param name="maDanhMuc">Mã danh mục tương ứng</param>
         /// <param name="trangThai">1: Đang bán, 0: Ngừng</param>
         public int ThemMonAn(string maMon, string tenMon, decimal giaBan,
-                             string donViTinh, string hinhAnh, string maDanhMuc, int trangThai)
+    decimal giaNhap, int slBan, int slNhap,
+    string donViTinh, string hinhAnh, string maDanhMuc, int trangThai)
         {
             List<SqlParameter> pars = new List<SqlParameter>
-            {
-                new SqlParameter("@MaMon",      maMon),
-                new SqlParameter("@TenMon",     tenMon),
-                new SqlParameter("@GiaBan",     giaBan),
-                new SqlParameter("@DonViTinh",  donViTinh  ?? ""),
-                new SqlParameter("@HinhAnh",    hinhAnh    ?? ""),
-                new SqlParameter("@MaDanhMuc",  maDanhMuc),
-                new SqlParameter("@TrangThai",  trangThai)
-            };
+    {
+        new SqlParameter("@MaMon", maMon),
+        new SqlParameter("@TenMon", tenMon),
+        new SqlParameter("@GiaBan", giaBan),
+        new SqlParameter("@GiaNhap", giaNhap),
+        new SqlParameter("@SoLuongBanTrongNgay", slBan),
+        new SqlParameter("@SoLuongNhapTrongNgay", slNhap),
+        new SqlParameter("@DonViTinh", donViTinh ?? ""),
+        new SqlParameter("@HinhAnh", hinhAnh ?? ""),
+        new SqlParameter("@MaDanhMuc", maDanhMuc),
+        new SqlParameter("@TrangThai", trangThai)
+    };
+
             return db.XuLy("sp_Admin_ThemMonAn", pars);
         }
 
@@ -63,18 +68,23 @@ namespace QUANLYNHAHANG
         // SỬA THÔNG TIN MÓN ĂN
         // =============================================
         public int SuaMonAn(string maMon, string tenMon, decimal giaBan,
-                            string donViTinh, string hinhAnh, string maDanhMuc, int trangThai)
+    decimal giaNhap, int slBan, int slNhap,
+    string donViTinh, string hinhAnh, string maDanhMuc, int trangThai)
         {
             List<SqlParameter> pars = new List<SqlParameter>
-            {
-                new SqlParameter("@MaMon",      maMon),
-                new SqlParameter("@TenMon",     tenMon),
-                new SqlParameter("@GiaBan",     giaBan),
-                new SqlParameter("@DonViTinh",  donViTinh  ?? ""),
-                new SqlParameter("@HinhAnh",    hinhAnh    ?? ""),
-                new SqlParameter("@MaDanhMuc",  maDanhMuc),
-                new SqlParameter("@TrangThai",  trangThai)
-            };
+    {
+        new SqlParameter("@MaMon", maMon),
+        new SqlParameter("@TenMon", tenMon),
+        new SqlParameter("@GiaBan", giaBan),
+        new SqlParameter("@GiaNhap", giaNhap),
+        new SqlParameter("@SoLuongBanTrongNgay", slBan),
+        new SqlParameter("@SoLuongNhapTrongNgay", slNhap),
+        new SqlParameter("@DonViTinh", donViTinh ?? ""),
+        new SqlParameter("@HinhAnh", hinhAnh ?? ""),
+        new SqlParameter("@MaDanhMuc", maDanhMuc),
+        new SqlParameter("@TrangThai", trangThai)
+    };
+
             return db.XuLy("sp_Admin_SuaMonAn", pars);
         }
 
@@ -100,6 +110,16 @@ namespace QUANLYNHAHANG
     };
 
             return db.LayDuLieu("sp_Admin_TimKiemMonAn", pars);
+        }
+        public int DemSoMonTheoDanhMuc(string maDanhMuc)
+        {
+            string sql = "SELECT COUNT(*) FROM MonAn WHERE MaDanhMuc = @MaDanhMuc";
+
+            SqlParameter[] pars = {
+        new SqlParameter("@MaDanhMuc", maDanhMuc)
+    };
+
+            return Convert.ToInt32(db.ExecuteScalar(sql, pars));
         }
     }
 }

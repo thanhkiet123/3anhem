@@ -34,7 +34,7 @@ namespace QUANLYNHAHANG
                 return;
             }
 
-            string connectionString = @"Server=.\MSSQLSERVER1;Database=QLNH;Trusted_Connection=True";
+            string connectionString = @"Server=.;Database=QLNHT;Trusted_Connection=True";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try

@@ -18,7 +18,7 @@ namespace QUANLYNHAHANG
         {
             InitializeComponent();
         }
-        string strConn = @"Server=.\MSSQLSERVER1;Database=QLNH;Trusted_Connection=True";
+        string strConn = @"Server=.;Database=QLNHT;Trusted_Connection=True";
 
         private void frmDoanhThu_Load(object sender, EventArgs e)
         {

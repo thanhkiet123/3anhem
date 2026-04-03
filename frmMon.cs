@@ -10,7 +10,7 @@ namespace QUANLYNHAHANG
 {
     public partial class frmMon : Form
     {
-        string connectionString = @"Data source=.\MSSQLSERVER1;Initial Catalog=QLNH;Integrated Security=True";
+        string connectionString = @"Data source=.;Initial Catalog=QLNHT;Integrated Security=True";
 
         DataTable gioHang = new DataTable();
         DataTable dtHienThi = new DataTable();

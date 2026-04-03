@@ -22,7 +22,7 @@ namespace QUANLYNHAHANG
         {
             InitializeComponent();
         }
-        string strConn = @"Server=.\MSSQLSERVER1;Database=QLNH;Trusted_Connection=True";
+        string strConn = @"Server=.;Database=QLNHT;Trusted_Connection=True";
         int flag = 0;
         bool dangXemThungRac = false;
         private void groupBox1_Enter(object sender, EventArgs e)
