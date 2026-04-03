@@ -91,5 +91,22 @@ namespace QUANLYNHAHANG
                 return dt;
             }
         }
+        public string ThemBanTuDong(string tenBan, int soCho, int trangThai, string khu)
+        {
+            var pars = new List<SqlParameter>()
+    {
+        new SqlParameter("@TenBan", tenBan),
+        new SqlParameter("@SoChoNgoi", soCho),
+        new SqlParameter("@TrangThai", trangThai),
+        new SqlParameter("@Khu", khu)
+    };
+
+            DataTable dt = db.LayDuLieu("sp_Admin_ThemBan_TuDong", pars);
+
+            if (dt.Rows.Count > 0)
+                return dt.Rows[0][0].ToString();
+
+            return null;
+        }
     }
 }

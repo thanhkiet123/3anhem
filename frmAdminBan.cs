@@ -110,12 +110,21 @@ namespace QUANLYNHAHANG
         private void frmAdminBan_Load(object sender, EventArgs e)
         {
             dgvBan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            cboKhu.Items.Clear();
+            cboKhu.Items.Add("A");
+            cboKhu.Items.Add("B");
+            cboKhu.Items.Add("V"); // VIP
+            cboKhu.SelectedIndex = 0;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             LamMoi();
-            txtMaBan.Focus();
+
+            txtMaBan.Text = "(Tự động)";
+            txtMaBan.ReadOnly = true;
+
+            txtTenBan.Focus();
             SetState(FormState.Adding);
         }
 
@@ -148,13 +157,7 @@ namespace QUANLYNHAHANG
         }
         private bool KiemTraNhapLieu()
         {
-            if (string.IsNullOrWhiteSpace(txtMaBan.Text))
-            {
-                MessageBox.Show("Vui lòng nhập mã bàn!");
-                txtMaBan.Focus();
-                return false;
-            }
-
+            
             if (string.IsNullOrWhiteSpace(txtTenBan.Text))
             {
                 MessageBox.Show("Vui lòng nhập tên bàn!");
@@ -198,8 +201,24 @@ namespace QUANLYNHAHANG
             switch (currentState)
             {
                 case FormState.Adding:
-                    result = bll.ThemBan(maBan, tenBan, soChoNgoi, trangThai);
-                    break;
+                    {
+                        // 🔥 KHÔNG dùng maBan nữa
+                        string khu = "A"; // 👉 sau này có thể lấy từ combobox
+
+                        string maMoi = bll.ThemBanTuDong(tenBan, soChoNgoi, trangThai, khu);
+
+                        if (!string.IsNullOrEmpty(maMoi))
+                        {
+                            MessageBox.Show("✅ Thêm thành công! Mã bàn: " + maMoi);
+                            txtMaBan.Text = maMoi;
+                            result = 1;
+                        }
+                        else
+                        {
+                            result = 0;
+                        }
+                        break;
+                    }
 
                 case FormState.Editing:
                     result = bll.SuaBan(maBan, tenBan, soChoNgoi, trangThai);
