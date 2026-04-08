@@ -37,6 +37,12 @@
             this.txtTenMon = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtGiaBan = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtGiaNhap = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtSLBan = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtSLNhap = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtDonViTinh = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -72,12 +78,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtSoChoNgoi = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtGiaNhap = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtSLBan = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtSLNhap = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonAn)).BeginInit();
             this.pnlGrid.SuspendLayout();
             this.pnlInput.SuspendLayout();
@@ -207,6 +207,54 @@
             this.txtGiaBan.Size = new System.Drawing.Size(115, 39);
             this.txtGiaBan.TabIndex = 77;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(292, 65);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(128, 31);
+            this.label17.TabIndex = 90;
+            this.label17.Text = "Giá Nhập";
+            // 
+            // txtGiaNhap
+            // 
+            this.txtGiaNhap.Location = new System.Drawing.Point(426, 68);
+            this.txtGiaNhap.Name = "txtGiaNhap";
+            this.txtGiaNhap.Size = new System.Drawing.Size(157, 39);
+            this.txtGiaNhap.TabIndex = 91;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(23, 110);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(100, 31);
+            this.label18.TabIndex = 92;
+            this.label18.Text = "SL Bán";
+            // 
+            // txtSLBan
+            // 
+            this.txtSLBan.Location = new System.Drawing.Point(129, 113);
+            this.txtSLBan.Name = "txtSLBan";
+            this.txtSLBan.Size = new System.Drawing.Size(58, 39);
+            this.txtSLBan.TabIndex = 93;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(193, 110);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(117, 31);
+            this.label19.TabIndex = 94;
+            this.label19.Text = "SL Nhập";
+            // 
+            // txtSLNhap
+            // 
+            this.txtSLNhap.Location = new System.Drawing.Point(316, 113);
+            this.txtSLNhap.Name = "txtSLNhap";
+            this.txtSLNhap.Size = new System.Drawing.Size(55, 39);
+            this.txtSLNhap.TabIndex = 95;
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -326,7 +374,7 @@
             // 
             // label16
             // 
-            this.label16.Location = new System.Drawing.Point(23, 391);
+            this.label16.Location = new System.Drawing.Point(23, 405);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(576, 32);
             this.label16.TabIndex = 89;
@@ -334,7 +382,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(23, 426);
+            this.btnThem.Location = new System.Drawing.Point(23, 440);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(184, 38);
             this.btnThem.TabIndex = 58;
@@ -344,7 +392,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(213, 426);
+            this.btnSua.Location = new System.Drawing.Point(213, 440);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(196, 38);
             this.btnSua.TabIndex = 59;
@@ -354,7 +402,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(415, 426);
+            this.btnXoa.Location = new System.Drawing.Point(415, 440);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(184, 38);
             this.btnXoa.TabIndex = 60;
@@ -364,7 +412,7 @@
             // 
             // btnLamMoi
             // 
-            this.btnLamMoi.Location = new System.Drawing.Point(23, 470);
+            this.btnLamMoi.Location = new System.Drawing.Point(23, 484);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(184, 38);
             this.btnLamMoi.TabIndex = 61;
@@ -374,7 +422,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(213, 470);
+            this.btnLuu.Location = new System.Drawing.Point(213, 484);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(196, 38);
             this.btnLuu.TabIndex = 62;
@@ -384,7 +432,7 @@
             // 
             // bntThoat
             // 
-            this.bntThoat.Location = new System.Drawing.Point(415, 470);
+            this.bntThoat.Location = new System.Drawing.Point(415, 484);
             this.bntThoat.Name = "bntThoat";
             this.bntThoat.Size = new System.Drawing.Size(184, 38);
             this.bntThoat.TabIndex = 63;
@@ -394,7 +442,7 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(23, 514);
+            this.txtTimKiem.Location = new System.Drawing.Point(23, 528);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(514, 39);
             this.txtTimKiem.TabIndex = 83;
@@ -403,7 +451,7 @@
             // btnTimKiem
             // 
             this.btnTimKiem.ForeColor = System.Drawing.Color.Navy;
-            this.btnTimKiem.Location = new System.Drawing.Point(543, 514);
+            this.btnTimKiem.Location = new System.Drawing.Point(543, 528);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(56, 39);
             this.btnTimKiem.TabIndex = 86;
@@ -415,7 +463,7 @@
             // 
             this.btnImportExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(124)))));
             this.btnImportExcel.ForeColor = System.Drawing.Color.Yellow;
-            this.btnImportExcel.Location = new System.Drawing.Point(23, 559);
+            this.btnImportExcel.Location = new System.Drawing.Point(23, 573);
             this.btnImportExcel.Name = "btnImportExcel";
             this.btnImportExcel.Size = new System.Drawing.Size(278, 38);
             this.btnImportExcel.TabIndex = 88;
@@ -427,7 +475,7 @@
             // 
             this.btnExportExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(124)))));
             this.btnExportExcel.ForeColor = System.Drawing.Color.Yellow;
-            this.btnExportExcel.Location = new System.Drawing.Point(307, 559);
+            this.btnExportExcel.Location = new System.Drawing.Point(307, 573);
             this.btnExportExcel.Name = "btnExportExcel";
             this.btnExportExcel.Size = new System.Drawing.Size(288, 38);
             this.btnExportExcel.TabIndex = 87;
@@ -536,54 +584,6 @@
             this.txtSoChoNgoi.Name = "txtSoChoNgoi";
             this.txtSoChoNgoi.Size = new System.Drawing.Size(191, 39);
             this.txtSoChoNgoi.TabIndex = 43;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(292, 65);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(128, 31);
-            this.label17.TabIndex = 90;
-            this.label17.Text = "Giá Nhập";
-            // 
-            // txtGiaNhap
-            // 
-            this.txtGiaNhap.Location = new System.Drawing.Point(426, 68);
-            this.txtGiaNhap.Name = "txtGiaNhap";
-            this.txtGiaNhap.Size = new System.Drawing.Size(157, 39);
-            this.txtGiaNhap.TabIndex = 91;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(23, 110);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(100, 31);
-            this.label18.TabIndex = 92;
-            this.label18.Text = "SL Bán";
-            // 
-            // txtSLBan
-            // 
-            this.txtSLBan.Location = new System.Drawing.Point(129, 113);
-            this.txtSLBan.Name = "txtSLBan";
-            this.txtSLBan.Size = new System.Drawing.Size(58, 39);
-            this.txtSLBan.TabIndex = 93;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(193, 110);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(117, 31);
-            this.label19.TabIndex = 94;
-            this.label19.Text = "SL Nhập";
-            // 
-            // txtSLNhap
-            // 
-            this.txtSLNhap.Location = new System.Drawing.Point(316, 113);
-            this.txtSLNhap.Name = "txtSLNhap";
-            this.txtSLNhap.Size = new System.Drawing.Size(55, 39);
-            this.txtSLNhap.TabIndex = 95;
             // 
             // frmAdminMon
             // 

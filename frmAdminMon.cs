@@ -23,6 +23,7 @@ namespace QUANLYNHAHANG
             ApplyModernTheme();
             LoadDanhMuc();
             TaiDuLieu();
+            AttachBlockEvents(this);
         }
         //------------------------------------------------
         enum FormState
@@ -46,8 +47,45 @@ namespace QUANLYNHAHANG
             btnXoa.Enabled = isIdle;
 
             btnLuu.Enabled = !isIdle;
+
+            // 🔥 Khi quay về Idle → bỏ focus luôn
+            if (isIdle)
+                this.ActiveControl = null;
+        }
+        // 🔥 CHẶN NHẬP KHI IDLE
+        private void BlockInputWhenIdle(object sender, EventArgs e)
+        {
+            if (currentState == FormState.Idle)
+                this.ActiveControl = null;
         }
 
+        private void BlockMouseWhenIdle(object sender, MouseEventArgs e)
+        {
+            if (currentState == FormState.Idle)
+                this.ActiveControl = null;
+        }
+        private void AttachBlockEvents(Control parent)
+        {
+            foreach (Control ctrl in parent.Controls)
+            {
+                if (ctrl is TextBox txt)
+                {
+                    txt.Enter += BlockInputWhenIdle;
+                    txt.MouseDown += BlockMouseWhenIdle;
+                }
+
+                if (ctrl is ComboBox cbo)
+                {
+                    cbo.MouseDown += BlockMouseWhenIdle;
+                }
+
+                // 🔥 Đệ quy cho GroupBox / Panel
+                if (ctrl.HasChildren)
+                {
+                    AttachBlockEvents(ctrl);
+                }
+            }
+        }
         // =============================================
         // LOAD DATA
         // =============================================
@@ -168,7 +206,7 @@ namespace QUANLYNHAHANG
             txtSLNhap.Clear();
             cboTrangThai.SelectedIndex = 1;
             cboDanhMuc.Text= null;
-            txtMaMon.ReadOnly = false;
+
 
             TaiDuLieu();
             SetState(FormState.Idle);
@@ -280,7 +318,7 @@ namespace QUANLYNHAHANG
             int tt = Convert.ToInt32(row.Cells["TrangThai"].Value);
             cboTrangThai.SelectedIndex = tt;
 
-            txtMaMon.ReadOnly = true;
+ 
 
             // 🔥 FIX ẢNH
             string path = row.Cells["HinhAnh"].Value?.ToString();

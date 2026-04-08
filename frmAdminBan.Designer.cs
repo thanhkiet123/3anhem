@@ -37,13 +37,19 @@
             this.txtTenBan = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSoChoNgoi = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cboKhu = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cboTrangThai = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
@@ -53,12 +59,6 @@
             this.btnExportExcel = new System.Windows.Forms.Button();
             this.pnlGrid = new System.Windows.Forms.Panel();
             this.dgvBan = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cboKhu = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.pnlHeader.SuspendLayout();
             this.pnlInput.SuspendLayout();
             this.pnlGrid.SuspendLayout();
@@ -156,6 +156,9 @@
             this.txtTenBan.Name = "txtTenBan";
             this.txtTenBan.Size = new System.Drawing.Size(115, 39);
             this.txtTenBan.TabIndex = 18;
+            this.txtTenBan.Enter += new System.EventHandler(this.txtTenBan_Enter);
+            this.txtTenBan.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtTenBan_MouseDown);
+            this.txtTenBan.MouseEnter += new System.EventHandler(this.txtTenBan_MouseEnter);
             // 
             // label2
             // 
@@ -172,6 +175,24 @@
             this.txtSoChoNgoi.Name = "txtSoChoNgoi";
             this.txtSoChoNgoi.Size = new System.Drawing.Size(46, 39);
             this.txtSoChoNgoi.TabIndex = 16;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(273, 65);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 31);
+            this.label7.TabIndex = 92;
+            this.label7.Text = "Khu";
+            // 
+            // cboKhu
+            // 
+            this.cboKhu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboKhu.FormattingEnabled = true;
+            this.cboKhu.Location = new System.Drawing.Point(344, 68);
+            this.cboKhu.Name = "cboKhu";
+            this.cboKhu.Size = new System.Drawing.Size(121, 39);
+            this.cboKhu.TabIndex = 93;
             // 
             // label1
             // 
@@ -191,9 +212,17 @@
             this.cboTrangThai.Size = new System.Drawing.Size(259, 39);
             this.cboTrangThai.TabIndex = 14;
             // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(23, 155);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(177, 53);
+            this.label8.TabIndex = 94;
+            this.label8.Text = "                ";
+            // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(206, 141);
+            this.label6.Location = new System.Drawing.Point(206, 155);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(238, 26);
             this.label6.TabIndex = 91;
@@ -202,14 +231,14 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(450, 141);
+            this.label3.Location = new System.Drawing.Point(450, 155);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 31);
             this.label3.TabIndex = 13;
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(23, 197);
+            this.btnThem.Location = new System.Drawing.Point(23, 211);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(232, 56);
             this.btnThem.TabIndex = 5;
@@ -219,7 +248,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(261, 197);
+            this.btnSua.Location = new System.Drawing.Point(261, 211);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(232, 56);
             this.btnSua.TabIndex = 6;
@@ -229,7 +258,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(23, 259);
+            this.btnXoa.Location = new System.Drawing.Point(23, 273);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(232, 56);
             this.btnXoa.TabIndex = 7;
@@ -237,9 +266,39 @@
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(261, 273);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(232, 56);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "➕Thêm";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(23, 335);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(232, 56);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "✏️Sửa";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(261, 335);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(232, 56);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "🗑️Xóa";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
             // btnLamMoi
             // 
-            this.btnLamMoi.Location = new System.Drawing.Point(23, 383);
+            this.btnLamMoi.Location = new System.Drawing.Point(23, 397);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(232, 60);
             this.btnLamMoi.TabIndex = 8;
@@ -249,7 +308,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(261, 383);
+            this.btnLuu.Location = new System.Drawing.Point(261, 397);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(230, 60);
             this.btnLuu.TabIndex = 9;
@@ -259,7 +318,7 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(23, 449);
+            this.btnThoat.Location = new System.Drawing.Point(23, 463);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(232, 39);
             this.btnThoat.TabIndex = 10;
@@ -269,7 +328,7 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(261, 449);
+            this.txtTimKiem.Location = new System.Drawing.Point(261, 463);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(189, 39);
             this.txtTimKiem.TabIndex = 87;
@@ -278,7 +337,7 @@
             // btnTimKiem
             // 
             this.btnTimKiem.ForeColor = System.Drawing.Color.Navy;
-            this.btnTimKiem.Location = new System.Drawing.Point(456, 449);
+            this.btnTimKiem.Location = new System.Drawing.Point(456, 463);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(35, 38);
             this.btnTimKiem.TabIndex = 88;
@@ -290,7 +349,7 @@
             // 
             this.btnImportExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(124)))));
             this.btnImportExcel.ForeColor = System.Drawing.Color.Yellow;
-            this.btnImportExcel.Location = new System.Drawing.Point(23, 494);
+            this.btnImportExcel.Location = new System.Drawing.Point(23, 508);
             this.btnImportExcel.Name = "btnImportExcel";
             this.btnImportExcel.Size = new System.Drawing.Size(278, 38);
             this.btnImportExcel.TabIndex = 90;
@@ -302,7 +361,7 @@
             // 
             this.btnExportExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(124)))));
             this.btnExportExcel.ForeColor = System.Drawing.Color.Yellow;
-            this.btnExportExcel.Location = new System.Drawing.Point(23, 538);
+            this.btnExportExcel.Location = new System.Drawing.Point(23, 552);
             this.btnExportExcel.Name = "btnExportExcel";
             this.btnExportExcel.Size = new System.Drawing.Size(278, 38);
             this.btnExportExcel.TabIndex = 89;
@@ -337,62 +396,6 @@
             this.dgvBan.TabIndex = 0;
             this.dgvBan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBan_CellClick);
             this.dgvBan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBan_CellContentClick);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(273, 65);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 31);
-            this.label7.TabIndex = 92;
-            this.label7.Text = "Khu";
-            // 
-            // cboKhu
-            // 
-            this.cboKhu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboKhu.FormattingEnabled = true;
-            this.cboKhu.Location = new System.Drawing.Point(344, 68);
-            this.cboKhu.Name = "cboKhu";
-            this.cboKhu.Size = new System.Drawing.Size(121, 39);
-            this.cboKhu.TabIndex = 93;
-            // 
-            // label8
-            // 
-            this.label8.Location = new System.Drawing.Point(23, 141);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(177, 53);
-            this.label8.TabIndex = 94;
-            this.label8.Text = "                ";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(261, 321);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(232, 56);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "🗑️Xóa";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(23, 321);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(232, 56);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "✏️Sửa";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(261, 259);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(232, 56);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "➕Thêm";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // frmAdminBan
             // 

@@ -3,19 +3,47 @@
   "WorkspaceRootPath": "C:\\VStudio\\Win\u002B\\3anhem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|c:\\vstudio\\win\u002B\\3anhem\\frmadminban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|C:\\VStudio\\Win\u002B\\3anhem\\frmadminmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|solutionrelative:frmadminmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|c:\\vstudio\\win\u002B\\3anhem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|c:\\vstudio\\win\u002B\\3anhem\\frmadmindanhmuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|solutionrelative:frmadmindanhmuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|C:\\VStudio\\Win\u002B\\3anhem\\frmadminban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|solutionrelative:frmadminban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|c:\\vstudio\\win\u002B\\3anhem\\frmadminban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|solutionrelative:frmadminban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|c:\\vstudio\\win\u002B\\3anhem\\bll_ban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|C:\\VStudio\\Win\u002B\\3anhem\\bll_ban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|solutionrelative:bll_ban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|c:\\vstudio\\win\u002B\\3anhem\\frmbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|C:\\VStudio\\Win\u002B\\3anhem\\frmadminban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|solutionrelative:frmadminban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|c:\\vstudio\\win\u002B\\3anhem\\frmadminban.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|solutionrelative:frmadminban.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|c:\\vstudio\\win\u002B\\3anhem\\frmqlnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|solutionrelative:frmqlnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|c:\\vstudio\\win\u002B\\3anhem\\frmadminban.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|solutionrelative:frmadminban.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|C:\\VStudio\\Win\u002B\\3anhem\\frmadminmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|solutionrelative:frmadminmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|C:\\VStudio\\Win\u002B\\3anhem\\frmbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C244557-3C3E-4EB0-8124-29A7F165B5BF}|QUANLYNHAHANG.csproj|solutionrelative:frmbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -30,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -55,44 +83,133 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\VStudio\\Win\u002B\\3anhem\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\VStudio\\Win\u002B\\3anhem\\Program.cs*",
+              "RelativeToolTip": "Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T17:25:19.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmAdminBan.Designer.cs",
+              "DocumentMoniker": "C:\\VStudio\\Win\u002B\\3anhem\\frmAdminBan.Designer.cs",
+              "RelativeDocumentMoniker": "frmAdminBan.Designer.cs",
+              "ToolTip": "C:\\VStudio\\Win\u002B\\3anhem\\frmAdminBan.Designer.cs",
+              "RelativeToolTip": "frmAdminBan.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T17:07:02.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmAdminDanhMuc.cs",
+              "DocumentMoniker": "C:\\VStudio\\Win\u002B\\3anhem\\frmAdminDanhMuc.cs",
+              "RelativeDocumentMoniker": "frmAdminDanhMuc.cs",
+              "ToolTip": "C:\\VStudio\\Win\u002B\\3anhem\\frmAdminDanhMuc.cs",
+              "RelativeToolTip": "frmAdminDanhMuc.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAADwvxwAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T16:51:19.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmQLNhanVien.cs",
+              "DocumentMoniker": "C:\\VStudio\\Win\u002B\\3anhem\\frmQLNhanVien.cs",
+              "RelativeDocumentMoniker": "frmQLNhanVien.cs",
+              "ToolTip": "C:\\VStudio\\Win\u002B\\3anhem\\frmQLNhanVien.cs",
+              "RelativeToolTip": "frmQLNhanVien.cs",
+              "ViewState": "AgIAAPsBAAAAAAAAAADwvw0CAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T16:48:40.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmAdminBan.resx",
+              "DocumentMoniker": "C:\\VStudio\\Win\u002B\\3anhem\\frmAdminBan.resx",
+              "RelativeDocumentMoniker": "frmAdminBan.resx",
+              "ToolTip": "C:\\VStudio\\Win\u002B\\3anhem\\frmAdminBan.resx",
+              "RelativeToolTip": "frmAdminBan.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2026-04-06T06:46:02.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmAdminMon.cs [Design]",
+              "DocumentMoniker": "C:\\VStudio\\Win\u002B\\3anhem\\frmAdminMon.cs",
+              "RelativeDocumentMoniker": "frmAdminMon.cs",
+              "ToolTip": "C:\\VStudio\\Win\u002B\\3anhem\\frmAdminMon.cs [Design]*",
+              "RelativeToolTip": "frmAdminMon.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T02:12:58.459Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmAdminMon.cs",
+              "DocumentMoniker": "C:\\VStudio\\Win\u002B\\3anhem\\frmAdminMon.cs",
+              "RelativeDocumentMoniker": "frmAdminMon.cs",
+              "ToolTip": "C:\\VStudio\\Win\u002B\\3anhem\\frmAdminMon.cs*",
+              "RelativeToolTip": "frmAdminMon.cs*",
+              "ViewState": "AgIAALwAAAAAAAAAAAAiwM8AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T02:12:53.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "frmAdminBan.cs [Design]",
               "DocumentMoniker": "C:\\VStudio\\Win\u002B\\3anhem\\frmAdminBan.cs",
               "RelativeDocumentMoniker": "frmAdminBan.cs",
-              "ToolTip": "C:\\VStudio\\Win\u002B\\3anhem\\frmAdminBan.cs [Design]*",
-              "RelativeToolTip": "frmAdminBan.cs [Design]*",
+              "ToolTip": "C:\\VStudio\\Win\u002B\\3anhem\\frmAdminBan.cs [Design]",
+              "RelativeToolTip": "frmAdminBan.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-03T11:02:59.672Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "BLL_Ban.cs",
               "DocumentMoniker": "C:\\VStudio\\Win\u002B\\3anhem\\BLL_Ban.cs",
               "RelativeDocumentMoniker": "BLL_Ban.cs",
-              "ToolTip": "C:\\VStudio\\Win\u002B\\3anhem\\BLL_Ban.cs*",
-              "RelativeToolTip": "BLL_Ban.cs*",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAqwG8AAAABAAAAAAAAAA==",
+              "ToolTip": "C:\\VStudio\\Win\u002B\\3anhem\\BLL_Ban.cs",
+              "RelativeToolTip": "BLL_Ban.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAwFoAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-03T11:01:53.754Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "frmAdminBan.cs",
               "DocumentMoniker": "C:\\VStudio\\Win\u002B\\3anhem\\frmAdminBan.cs",
               "RelativeDocumentMoniker": "frmAdminBan.cs",
-              "ToolTip": "C:\\VStudio\\Win\u002B\\3anhem\\frmAdminBan.cs*",
-              "RelativeToolTip": "frmAdminBan.cs*",
-              "ViewState": "AgIAAMwAAAAAAAAAAAAuwL8AAAAMAAAAAAAAAA==",
+              "ToolTip": "C:\\VStudio\\Win\u002B\\3anhem\\frmAdminBan.cs",
+              "RelativeToolTip": "frmAdminBan.cs",
+              "ViewState": "AgIAAMwBAAAAAAAAAAAAwNQBAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-03T10:53:02.172Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "BanHang.cs",
               "DocumentMoniker": "C:\\VStudio\\Win\u002B\\3anhem\\BanHang.cs",
               "RelativeDocumentMoniker": "BanHang.cs",
@@ -104,7 +221,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "frmBanHang.cs",
               "DocumentMoniker": "C:\\VStudio\\Win\u002B\\3anhem\\frmBanHang.cs",
               "RelativeDocumentMoniker": "frmBanHang.cs",
@@ -112,8 +229,7 @@
               "RelativeToolTip": "frmBanHang.cs",
               "ViewState": "AgIAAF4BAAAAAAAAAAAqwGYBAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T05:40:15.383Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-03T05:40:15.383Z"
             }
           ]
         }

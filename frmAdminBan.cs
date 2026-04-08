@@ -37,6 +37,16 @@ namespace QUANLYNHAHANG
             dgvBan.DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml("#003140");
             dgvBan.DefaultCellStyle.SelectionForeColor = Color.White;
         }
+        private void SetInputState(bool enable)
+        {
+            txtMaBan.ReadOnly = !enable;
+            txtTenBan.ReadOnly = !enable;
+            txtSoChoNgoi.ReadOnly = !enable;
+
+            cboTrangThai.Enabled = enable;
+
+            // Nếu có thêm control thì thêm vào đây
+        }
         //-------------------------------------------------------
         enum FormState
         {
@@ -52,24 +62,16 @@ namespace QUANLYNHAHANG
         {
             currentState = state;
 
-            switch (state)
-            {
-                case FormState.Idle:
-                    SetButton(btnThem, true);
-                    SetButton(btnSua, true);
-                    SetButton(btnXoa, true);
-                    SetButton(btnLamMoi, true);
-                    SetButton(btnLuu, false);
-                    break;
+            bool isIdle = state == FormState.Idle;
 
-                default:
-                    SetButton(btnThem, false);
-                    SetButton(btnSua, false);
-                    SetButton(btnXoa, false);
-                    SetButton(btnLuu, true);
-                    SetButton(btnLamMoi, true);
-                    break;
-            }
+            // Button
+            btnThem.Enabled = isIdle;
+            btnSua.Enabled = isIdle;
+            btnXoa.Enabled = isIdle;
+            btnLuu.Enabled = !isIdle;
+
+            // 🔥 Quan trọng nhất
+            SetInputState(!isIdle);
         }
 
         private void SetButton(Button btn, bool enabled)
@@ -105,8 +107,36 @@ namespace QUANLYNHAHANG
             TaiDuLieu();
             SetState(FormState.Idle);
             LoadComboTrangThai();
+            txtTenBan.Enter += BlockInputWhenIdle;
+            txtSoChoNgoi.Enter += BlockInputWhenIdle;
+            txtMaBan.MouseDown += BlockMouseWhenIdle;
+            txtTenBan.MouseDown += BlockMouseWhenIdle;
+            txtSoChoNgoi.MouseDown += BlockMouseWhenIdle;
+            cboKhu.MouseDown += BlockMouseWhenIdle;
+            AttachBlockEvents();
+        }
+        private void BlockInputWhenIdle(object sender, EventArgs e)
+        {
+            if (currentState == FormState.Idle)
+                this.ActiveControl = null;
         }
 
+        private void BlockMouseWhenIdle(object sender, MouseEventArgs e)
+        {
+            if (currentState == FormState.Idle)
+                this.ActiveControl = null;
+        }
+        private void AttachBlockEvents()
+        {
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is TextBox txt)
+                {
+                    txt.Enter += BlockInputWhenIdle;
+                    txt.MouseDown += BlockMouseWhenIdle;
+                }
+            }
+        }
         private void frmAdminBan_Load(object sender, EventArgs e)
         {
             dgvBan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -115,6 +145,8 @@ namespace QUANLYNHAHANG
             cboKhu.Items.Add("B");
             cboKhu.Items.Add("V"); // VIP
             cboKhu.SelectedIndex = 0;
+            SetState(FormState.Idle);
+        
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -203,7 +235,7 @@ namespace QUANLYNHAHANG
                 case FormState.Adding:
                     {
                         // 🔥 KHÔNG dùng maBan nữa
-                        string khu = "A"; // 👉 sau này có thể lấy từ combobox
+                        string khu = cboKhu.SelectedItem.ToString();  // 👉 sau này có thể lấy từ combobox
 
                         string maMoi = bll.ThemBanTuDong(tenBan, soChoNgoi, trangThai, khu);
 
@@ -263,23 +295,38 @@ namespace QUANLYNHAHANG
             txtTenBan.Text = row.Cells["TenBan"].Value?.ToString();
             txtSoChoNgoi.Text = row.Cells["SoChoNgoi"].Value?.ToString();
 
-            // FIX CRASH
+            // 👉 FIX TRANG THÁI
             if (row.Cells["TrangThai"].Value != null && cboTrangThai.Items.Count > 0)
             {
                 int trangThai = Convert.ToInt32(row.Cells["TrangThai"].Value);
 
-                if (trangThai >= 0 && trangThai < cboTrangThai.Items.Count)
-                    cboTrangThai.SelectedIndex = trangThai;
+                cboTrangThai.SelectedIndex =
+                    (trangThai >= 0 && trangThai < cboTrangThai.Items.Count)
+                    ? trangThai : 0;
+            }
+
+            // 🔥 FIX KHU (THIẾU CHÍNH LÀ Ở ĐÂY)
+            string maBan = row.Cells["MaBan"].Value?.ToString();
+
+            if (!string.IsNullOrEmpty(maBan) && maBan.Length >= 2)
+            {
+                string khu = maBan.Substring(1, 1); // lấy ký tự thứ 2
+
+                if (cboKhu.Items.Contains(khu))
+                    cboKhu.SelectedItem = khu;
                 else
-                    cboTrangThai.SelectedIndex = 0; // fallback
+                    cboKhu.SelectedIndex = 0;
             }
 
             txtMaBan.ReadOnly = true;
+            SetState(FormState.Idle);
+
         }
 
         private void dgvBan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            SetState(FormState.Idle);
+        
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
@@ -430,6 +477,21 @@ namespace QUANLYNHAHANG
             }
 
             TaiDuLieu();
+        }
+
+        private void txtTenBan_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTenBan_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void txtTenBan_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

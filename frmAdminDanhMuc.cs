@@ -18,9 +18,32 @@ namespace QUANLYNHAHANG
             InitializeComponent();
             ApplyModernTheme();   
             TaiDuLieu();
+            LoadComboTrangThai();
+            txtMaDanhMuc.Enter += BlockInputWhenIdle;
+            txtTenDanhMuc.Enter += BlockInputWhenIdle;
+            txtHinhAnh.Enter += BlockInputWhenIdle;
+            txtMoTa.Enter += BlockInputWhenIdle;
+
+            txtMaDanhMuc.MouseDown += BlockMouseWhenIdle;
+            txtTenDanhMuc.MouseDown += BlockMouseWhenIdle;
+            txtHinhAnh.MouseDown += BlockMouseWhenIdle;
+            txtMoTa.MouseDown += BlockMouseWhenIdle;
+            AttachBlockEvents();
+            cboTrangThai.MouseDown += BlockMouseWhenIdle;
         }
         //--------------------------------------------------------
         BLL_DanhMuc bll = new BLL_DanhMuc();
+        private void AttachBlockEvents()
+        {
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is TextBox txt)
+                {
+                    txt.Enter += BlockInputWhenIdle;
+                    txt.MouseDown += BlockMouseWhenIdle;
+                }
+            }
+        }
         private void TaiDuLieu()
         {
             dgvDanhMuc.DataSource = bll.LayDanhSachDanhMuc();
@@ -108,6 +131,7 @@ namespace QUANLYNHAHANG
             btnXoa.Enabled = isIdle;
 
             btnLuu.Enabled = !isIdle;
+            ToggleInput(!isIdle);
         }
         private void LamMoi()
         {
@@ -117,12 +141,30 @@ namespace QUANLYNHAHANG
             txtMoTa.Text = "";
             cboTrangThai.SelectedIndex = 1;
 
-            txtMaDanhMuc.ReadOnly = false;
-
             TaiDuLieu();
             SetState(FormState.Idle);
         }
+        private void ToggleInput(bool enable)
+        {
+            txtMaDanhMuc.ReadOnly = !enable;
+            txtTenDanhMuc.ReadOnly = !enable;
+            txtHinhAnh.ReadOnly = !enable;
+            txtMoTa.ReadOnly = !enable;
 
+            cboTrangThai.Enabled = enable;
+            btnChonAnh.Enabled = enable;
+        }
+        private void BlockInputWhenIdle(object sender, EventArgs e)
+        {
+            if (currentState == FormState.Idle)
+                this.ActiveControl = null;
+        }
+
+        private void BlockMouseWhenIdle(object sender, MouseEventArgs e)
+        {
+            if (currentState == FormState.Idle)
+                this.ActiveControl = null;
+        }
         //---------------------------------------------------------
         private void frmAdminDanhMuc_Load(object sender, EventArgs e)
         {
@@ -200,6 +242,7 @@ namespace QUANLYNHAHANG
 
         private void dgvDanhMuc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             if (e.RowIndex < 0) return;
 
             var row = dgvDanhMuc.Rows[e.RowIndex];
@@ -212,11 +255,7 @@ namespace QUANLYNHAHANG
             if (row.Cells["TrangThai"].Value != null)
             {
                 int tt = Convert.ToInt32(row.Cells["TrangThai"].Value);
-
-                if (tt >= 0 && tt < cboTrangThai.Items.Count)
-                    cboTrangThai.SelectedIndex = tt;
-                else
-                    cboTrangThai.SelectedIndex = 0;
+                cboTrangThai.SelectedIndex = (tt >= 0 && tt < cboTrangThai.Items.Count) ? tt : 0;
             }
 
             txtMaDanhMuc.ReadOnly = true;
